@@ -1,0 +1,31 @@
+recent_projects:
+  - C:\Games\Unreal\1111
+window:
+  width: 1920
+  height: 991
+  maximized: false
+resources_window:
+  icon_size: 32
+  layout: 0
+  item_view_style: 1
+  left_panel_width: 200
+code_editor:
+  font_size: 14
+editor:
+  multi_viewport: false
+  panels:
+    structure: true
+    properties: true
+    resources: true
+    output: true
+    animation: true
+    terrain: false
+    ai_chat: true
+ai_assistant:
+  provider: openai
+  model: gpt-4.1
+  custom_endpoint: ""
+  approval_mode: preview_then_approve
+  max_output_tokens: 8192
+  max_tool_rounds: 24
+last_project_path: C:\Games\Unreal\1111
