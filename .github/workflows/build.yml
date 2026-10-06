@@ -1,0 +1,20 @@
+name: build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -q && sudo apt-get install -y -q build-essential cmake libgl-dev libx11-dev libxi-dev libxcursor-dev libglfw3-dev
+      - run: cmake -S engine -B build -DCMAKE_BUILD_TYPE=Release
+      - run: cmake --build build -j"$(nproc)"
+      - run: test -x build/doriax-project && ls -la build/libdoriax.a build/doriax-project
